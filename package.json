@@ -1,0 +1,27 @@
+{
+  "description": "Laning Page for Gefest Calculator",
+  "author": "Khusamov Sukhrob <khusamov@yandex.ru>",
+  "name": "calc-gefest-landing-page",
+  "version": "0.0.1",
+  "main": "site.js",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/khusamov/calc-gefest-landing-page.git"
+  },
+  "engines": {
+    "node": "~4.2.1"
+  },
+  "dependencies": {
+    "body-parser": "~1.14.0",
+    "express": "~4.13.3",
+    "express-resource": "~1.0.0",
+    "jade": "^1.11.0",
+    "jsymfony-autoload": "~0.0.1",
+    "multi-ini": "~0.5.2",
+    "pg-promise": "~1.10.6"
+  },
+  "bugs": {
+    "url": "https://bitbucket.org/khusamov/calc-gefest-landing-page/issues",
+    "email": "khusamov@yandex.ru"
+  }
+}
