@@ -1,6 +1,51 @@
 
 body {
-	padding-top: 70px;
+	1padding-top: 70px;
+	1padding-bottom: 300px;
 	/* http://www.lenagold.ru/fon/main.html */
-	_background-image: url("http://www.lenagold.ru/fon/tum/gelsv/gelsvtum03.jpg");
+	1background-image: url("http://www.lenagold.ru/fon/tum/gelsv/gelsvtum03.jpg");
+}
+
+.notebook {
+    position: relative;
+    overflow: hidden;
+}
+
+.notebook img {
+	position: absolute;
+}
+
+/* onepage-scroll */
+
+section {
+	padding-top: 70px;
+}
+
+section h2 {
+	color: #bf3e11;
+	font-size: 300%;
+	text-align: center;
+	border-bottom: solid 1px #FFC0AA;
+	padding-bottom: 20px;
+	margin-bottom: 40px;
+}
+
+/* Коррекция Twitter Bootstrap */
+
+.modal-fs {
+	width: 95%;
+}
+
+.nav-tabs {
+	margin-bottom: 15px;
+}
+
+/* Тени */
+
+.shadow {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.shadow-large {
+	box-shadow: 0 0 35px rgba(0, 0, 0, 0.6);
 }

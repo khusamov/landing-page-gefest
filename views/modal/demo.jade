@@ -1,0 +1,9 @@
+//- Модальное окно Демонстрация калькулятора
+div.modal.fade#demo
+	div.modal-dialog.modal-fs
+		div.modal-content
+			div.modal-header
+				button.btn.btn-primary(type="button") Купить калькулятор
+				span 
+				button.btn.btn-default(type="button" data-dismiss="modal") Закрыть окно
+			div.modal-body: iframe(src="http://calcgefest-khusamov.c9.io/#navoff" width="100%" height="700px" style="border: 0;")

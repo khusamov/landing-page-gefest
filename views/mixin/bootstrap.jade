@@ -1,0 +1,35 @@
+
+mixin glyph(name)
+	span.glyphicon(aria-hidden="true" class="glyphicon-" + name style="font-size: 150%; margin-right: 10px")
+
+mixin css(href)
+	link(href=href rel="stylesheet")
+
+mixin jumbotron
+	div.jumbotron(class=attributes.class)
+		block
+
+mixin dropdown(item)
+	li.dropdown
+		a.dropdown-toggle(href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false") #{item.text} #[span.caret]
+		ul.dropdown-menu
+			each subitem in item.menu
+				li: a(href=item.href)= subitem.text
+
+mixin navbar(title, menu)
+	nav.navbar.navbar-default.navbar-fixed-top.shadow-large
+		div.container
+			div.navbar-header: a(class="navbar-brand" href="#")= title
+			div#navbar.navbar-collapse.collapse
+				ul.nav.navbar-nav
+					each item in menu
+						if item.menu
+							+dropdown(item)
+						else
+							li: a(href=item.href)= item.text
+										
+				p.navbar-text.navbar-right +7 (495) 123-45-67
+				
+				//form.navbar-form.navbar-right
+				//	button.btn.btn-info(type="button") +7 (495) 123-45-67
+			

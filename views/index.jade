@@ -1,51 +1,17 @@
 
-mixin css(href)
-	link(href=href rel="stylesheet")
-
-mixin jumbotron
-	div.jumbotron(class=attributes.class)
-		block
-
-mixin dropdown(item)
-	li.dropdown
-		a.dropdown-toggle(href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false") #{item.text} #[span.caret]
-		ul.dropdown-menu
-			each subitem in item.menu
-				li: a(href="#")= subitem.text
-
-mixin navbar(title, menu)
-	nav.navbar.navbar-default.navbar-fixed-top
-		div.container-fluid
-			div.navbar-header: a(class="navbar-brand" href="#")= title
-			div#navbar.navbar-collapse.collapse
-				ul.nav.navbar-nav
-					each item in menu
-						if item.menu
-							+dropdown(item)
-						else
-							li: a(href="#")= item.text
+include mixin/bootstrap
 
 html(lang="ru")
-
-	head
-		title= title
-		+css("style.css")
-		+css("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
-		//- http://bootswatch.com/
-		+css("https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/united/bootstrap.min.css") 
-		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
-		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
-		meta(charset="utf-8")
-		meta(http-equiv="X-UA-Compatible", content="IE=edge")
-		meta(name="viewport", content="width=device-width, initial-scale=1")
-		
+	head: include head	
 	body
+		include modal/demo
 		+navbar("Оконный калькулятор", menu)
-		div.container-fluid.theme-showcase
-			+jumbotron
-				h1= title
-				p.
-					Представляем оконный калькулятор. Это программа, которую вы можете установить к себе на сайт,
-					и которая делает расчет стоимости доступным для ваших клиентов.
-				p: a.btn.btn-primary.btn-lg(hred="#") Купить калькулятор
-			iframe(src="http://calcgefest-khusamov.c9.io/#navoff" width="100%" height="1100px" style="border: 0;")
+		div.page
+			section: include section/welcome
+			section: include section/goal
+			section: include section/features
+			section#offer: include section/offer
+			section: include section/scheme
+			section(style='background-image: url("http://www.lenagold.ru/fon/tum/gelsv/gelsvtum03.jpg");'): include section/setupokna
+
+								
