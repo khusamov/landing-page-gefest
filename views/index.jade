@@ -3,16 +3,15 @@ include mixin/bootstrap
 
 html(lang="ru")
 	head: include head	
-	body
+	body(data-spy="scroll" data-target=".navbar")
 		include modal/demo
+		include modal/order
 		+navbar("Оконный калькулятор", menu)
-		div.page
-			section: include section/welcome
-			section: include section/goal
-			section: include section/features
-			section#offer: include section/offer
-			section: include section/scheme
-			section: include section/compatible
-			section(style='background-image: url("http://www.lenagold.ru/fon/tum/gelsv/gelsvtum03.jpg");'): include section/setupokna
-
-								
+		include section/welcome
+		include section/goal
+		include section/features
+		include section/offer
+		include section/scheme
+		include section/compatible
+		include section/setupokna
+		include section/contacts

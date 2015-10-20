@@ -1,6 +1,6 @@
 
 mixin glyph(name)
-	span.glyphicon(aria-hidden="true" class="glyphicon-" + name style="font-size: 150%; margin-right: 10px")
+	span.glyphicon(aria-hidden="true" class="glyphicon-" + name)
 
 mixin css(href)
 	link(href=href rel="stylesheet")
@@ -18,8 +18,8 @@ mixin dropdown(item)
 
 mixin navbar(title, menu)
 	nav.navbar.navbar-default.navbar-fixed-top.shadow-large
-		div.container
-			div.navbar-header: a(class="navbar-brand" href="#")= title
+		div.container-fluid
+			div.navbar-header: a.lobster(class="navbar-brand" href="#welcome")= title
 			div#navbar.navbar-collapse.collapse
 				ul.nav.navbar-nav
 					each item in menu
@@ -27,11 +27,13 @@ mixin navbar(title, menu)
 							+dropdown(item)
 						else
 							li: a(href=item.href)= item.text
-										
-				p.navbar-text.navbar-right +7 (495) 123-45-67
 				
 				form.navbar-form.navbar-right
+					button.btn.btn-info(type="button" data-toggle="modal" data-target="#demo") Демо
+					span 
 					select#themeswitch.form-control
+										
+				p.navbar-text.navbar-right +7 (495) 123-45-67
 				
 				//form.navbar-form.navbar-right
 				//	button.btn.btn-info(type="button") +7 (495) 123-45-67

@@ -1,19 +1,71 @@
-div.container.theme-showcase
+
+style.
+	.scheme-glyph {
+		padding: 10px;
+		text-align: center;
+		font-size: 60px;
+		color: white;
+		
+		margin: 0 auto; 
+		width: 100px; 
+		height: 100px; 
+		background-color: #bf3e11;
+		
+	}
+	.scheme-glyph span.glyphicon {
+		margin: 10%;
+	}
+	section#scheme div.popover {
+		margin-top: 20px;
+	}
+
+
+section#scheme: div.container
+
 	h2 Схема покупки калькулятора
-	ul.nav.nav-tabs.nav-justified
-		li.active: a(href="#1" data-toggle="tab") Предоплата
-		li: a(href="#2" data-toggle="tab") Настройка
-		li: a(href="#3" data-toggle="tab") Получение прайса
-		li: a(href="#4" data-toggle="tab") Проверка калькулятора  
-		li: a(href="#5" data-toggle="tab") Сдача к эксплуатацию
-	div.tab-content
-		div#1.tab-pane.fade.active.in 
-			p Предоплата
-		div#2.tab-pane.fade
-			p Настройка
-		div#3.tab-pane.fade
-			p Получение прайса
-		div#4.tab-pane.fade
-			p Проверка калькулятора  
-		div#5.tab-pane.fade
-			p Сдача к эксплуатацию
+	
+	
+	div.row
+		div.col-md-3
+			div.img-circle.scheme-glyph #[+glyph("thumbs-up")]
+			div.popover.static.bottom
+				div.arrow
+				h3.popover-title Формулы
+				div.popover-content: p Согласование формул расчета стоимости калькулятора, прайс-листов, услуг и дополнительных материалов.
+			
+		div.col-md-3
+			div.img-circle.scheme-glyph #[+glyph("wrench")]
+			div.popover.static.bottom
+				div.arrow
+				h3.popover-title Настройка
+				div.popover-content: p Настройка калькулятора нашими специалистами.
+			
+		div.col-md-3
+			div.img-circle.scheme-glyph #[+glyph("log-in")]
+			div.popover.static.bottom
+				div.arrow
+				h3.popover-title Установка
+				div.popover-content: p Установка калькулятора на Ваш сайт.
+			
+		div.col-md-3
+			div.img-circle.scheme-glyph #[+glyph("saved")]
+			div.popover.static.bottom
+				div.arrow
+				h3.popover-title Проверка
+				div.popover-content: p Проверка и прием выполненных работ.
+			
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

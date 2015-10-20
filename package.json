@@ -16,10 +16,9 @@
     "express": "~4.13.3",
     "express-resource": "~1.0.0",
     "jade": "^1.11.0",
-    "jquery.scrollto": "^2.1.2",
     "jsymfony-autoload": "~0.0.1",
-    "method-override": "^2.3.5",
     "multi-ini": "~0.5.2",
+    "nodemailer": "^1.8.0",
     "pg-promise": "~1.10.6"
   },
   "bugs": {

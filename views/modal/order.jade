@@ -1,0 +1,24 @@
+
+//- Форма заказа калькулятора
+
+div.modal.fade#order: div.modal-dialog: div.modal-content
+		
+	div.modal-header
+		h4.modal-title Купить калькулятор
+		
+	div.modal-body
+		p Для заказа калькулятора введите свою секретную частную информацию, а именно:
+		form
+			div.form-group
+				label(for="email") Адрес почты
+				input.form-control#email(type="email")
+			div.form-group
+				label(for="phone") Номер телефона
+				input.form-control#phone(type="phone")
+			div.form-group
+				label(for="name") Ваше имя
+				input.form-control#name(type="text")
+				
+	div.modal-footer
+		button.btn.btn-primary Купить
+		button.btn.btn-default(type="button" data-dismiss="modal") Отмена

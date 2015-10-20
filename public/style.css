@@ -1,5 +1,12 @@
 
+@import url("http://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic");
+
+.lobster {
+	font-family: "Lobster";
+}
+
 body {
+	position: relative;
 	1padding-top: 70px;
 	1padding-bottom: 300px;
 	/* http://www.lenagold.ru/fon/main.html */
@@ -18,7 +25,7 @@ body {
 /* onepage-scroll */
 
 section {
-	padding-top: 70px;
+	padding-top: 51px;
 }
 
 section h2 {
@@ -39,6 +46,72 @@ section h2 {
 .nav-tabs {
 	margin-bottom: 15px;
 }
+
+.navbar-nav > li > a {
+	font-size: 115%;
+}
+
+.navbar-text {
+	font-size: 115%;
+	margin-top: 13px;
+	margin-bottom: 13px;
+}
+
+.navbar-brand {
+	font-size: 23px;
+}
+
+.popover,
+.popover h3,
+.list-group-item {
+	font-size: 130%; 
+}
+
+.list-group-item span.glyphicon {
+	font-size: 110%; 
+	margin-right: 10px
+}
+
+/*h1, .h1 { font-size: 36px; }
+h2, .h2 { font-size: 30px; }
+h3, .h3 { font-size: 24px; }
+h4, .h4 { font-size: 18px; }
+h5, .h5 { font-size: 14px; }
+h6, .h6 { font-size: 12px; }*/
+
+.popover.static {
+	position: relative;
+	display: block;
+	margin-bottom: 10px;
+	z-index: initial;
+}
+
+.popover.bottom {
+	padding: 0;
+}
+
+.popover.bottom > .arrow:after {
+	border-bottom-color: #f7f7f7;
+}
+
+.popover.bottom > .arrow {
+	border-bottom-color: #B7B7B7;
+}
+
+.navbar-right {
+	margin-right: 0px;
+}
+
+.tooltip.bottom .tooltip-arrow {
+	border-bottom-color: #772953;
+}
+
+.tooltip-inner {
+	padding: 10px 20px 10px 20px;
+	background-color: #772953;
+	color: white;
+}
+
 
 /* Тени */
 
