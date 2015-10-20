@@ -72,3 +72,21 @@ glyphicon glyphicon-saved
 
 ## Калькулятор в социальных сетях
 
+
+
+## Совместимость
+Калькулятор поддерживает совместную работу с основными оконными расчетными 
+программами, такими как:
+
+Суперокна, Профстрой, altAwin, Optima WIN, WinCAD, Klaes, Winkhaus WH ОКНА, BandMaster, 
+WinDraw, Лабрадор-3D, PrefSuite, WinCalc, Раскон
+
+а также менее известными, но активно задействованными на оконных предприятиях:
+
+СтанПроф, Наши окна, Окнософт, Окна.NET, Окна-Двери, Euro Window, OpenWindow, 
+UniWin Small Business, FENESTRA, Расчет окон, Winplast, WinFastReports Plast, 
+Расчет пластиковых окон, Столкад, Ecadam, WINDOORS, Adulo GS, PowerPVC, ATHENA, 
+UPOS, Wintechnology, FastWIN, EXCALIBUR, Windowmaker, IT Окна Конструктор, 
+3E-Look, Alumax3D
+
+и многими другими программами для расчета окон.

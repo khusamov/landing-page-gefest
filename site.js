@@ -29,6 +29,9 @@ let menu = [{
 	text: "Схема покупки",
 	href: "#offer"
 }, {
+	text: "Совместимость",
+	href: "#offer"
+}, {
 	text: "Контакты",
 	href: "#",
 }];
