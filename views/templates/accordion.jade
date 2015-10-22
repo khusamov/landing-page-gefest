@@ -36,6 +36,10 @@
 		Детальное коммерческое предложение с таблицей сметой, \
 		логотипом, телефоном и контактами Вашей компании\
 		==\
+		Интеграция с вашим сайтом или интернет-магазином#\
+		Калькулятор можно связать с Вашим интернет-магазином \
+		для оперативной работы с клиентом.\
+		==\
 		Фотографии сечений выбранных систем профилей и стеклопакета#\
 		Позволяют сразу увидеть срез будущего изделия или стеклопакета \
 		для любознательных клиентов.\
@@ -54,47 +58,24 @@
 
 
 
-style.
-	section#features .carousel .carousel-inner div.inner {
-		height: 250px;
-		background-repeat: no-repeat; 
-		background-position: center center;
-	}
-	section#features .carousel .item {
-		text-align: center;
-		height: 400px;
-		border: 1px solid silver;
-		padding: 0px 10px 0px 10px;
-	}
-	
-	
 
-section#features: div.container
+
+
+section#features: div.container.theme-showcase
 
 	h2 Возможности калькулятора
 	
-	div.row
 	
-		div.col-md-2
+	div.panel-group#accordion(role="tablist" aria-multiselectable="true")
+	
+		each feature, index in features
+			div.panel.panel-default
+				div.panel-heading(role="tab" id="heading" + index)
+					h4.panel-title
+						a(class=index ? "collapsed" : "" data-toggle="collapse" data-parent="#accordion" href="#collapse" + index aria-expanded="true" aria-controls="collapse" + index role="button")
+							= feature.title
+				div.panel-collapse.collapse(class=index ? "" : "in" id="collapse" + index role="tabpanel" aria-labelledby="heading" + index)
+					div.panel-body= feature.text
 		
-		div.col-md-8
-		
-			div.carousel.slide#carousel-features(data-ride="carousel")
-				ol.carousel-indicators
-					each feature, index in features
-						li(class=index ? "" : "active" data-target="#carousel-features" data-slide-to=index)
-				div.carousel-inner(role="listbox")
-					each feature, index in features
-						div.item(class=index ? "" : "active")
-							h3= feature.title
-							p.lead= feature.text
-							div.inner(style="background-image: url('/images/features/feature" + index + ".png');")
-							
-		
-		div.col-md-2
-	
-	
-	
-
 	
 	

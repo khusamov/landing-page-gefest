@@ -17,6 +17,28 @@ http://expressjs.com/guide/routing.html
 https://nodejs.org/api/  
 http://www.postgresql.org/docs/9.4/static/sql-commands.html
 
+Подключаемые скрипты эффектов:
+==============================
+
+Всплывающие сообщения toast
+https://github.com/FezVrasta/snackbarjs
+https://github.com/FezVrasta/dropdown.js
+
+Скроллинг:
+http://demos.flesler.com/jquery/scrollTo/
+https://github.com/flesler/jquery.scrollTo
+
+Тема:
+http://bootswatch.com/united/
+http://getbootstrap.com/
+http://getbootstrap.com/examples/grid/
+
+Каптча:
+https://www.npmjs.com/package/recaptcha
+
+PHP-прокси:
+https://github.com/jenssegers/php-proxy
+
 План лендинга:
 ===============
 
