@@ -99,7 +99,18 @@ app.use(function(error, request, response, next) {
 });
 
 
+// Запуск программы
 
-let server = app.listen(8080, function() {
-	console.log("Сайт запущен.");
-});
+
+let commander = require("commander");
+
+commander.option("-l, --listen", "Запуск веб-сервера.").parse(process.argv);
+
+if (commander.listen) {
+	app.listen(8080, function() {
+		console.log("Сайт запущен.");
+	});
+} else {
+	module.exports = app;
+}
+
