@@ -1,9 +1,12 @@
 {
-  "name": "calc-gefest-landing-page",
+  "name": "landing-page-gefest",
   "description": "Landing Page for Gefest Calculator",
   "author": "Khusamov Sukhrob <khusamov@yandex.ru>",
   "version": "0.0.1",
   "main": "site.js",
+  "bin": {
+  	"landinggefest": "./bin/landinggefest"
+  },
   "repository": {
     "type": "git",
     "url": "https://bitbucket.org/khusamov/calc-gefest-landing-page.git"
