@@ -2,4 +2,4 @@
 
 require("../site.js").listen(1501, function() {
 	console.log("Сайт запущен на порту 1501.");
-});;
+});
