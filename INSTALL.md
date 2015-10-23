@@ -60,7 +60,7 @@ composer require jenssegers/proxy
 {
   "name": "calc-gefest-landing-page",
   "dependencies": {
-    "calc-gefest-landing-page": "git@bitbucket.org:khusamov/calc-gefest-landing-page.git"
+    "calc-gefest-landing-page": "git@github.com:khusamov/landing-page-gefest.git"
   }
 }
 ~~~
