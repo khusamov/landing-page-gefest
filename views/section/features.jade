@@ -5,7 +5,7 @@
 		Этот выбор осуществляется из предустановленного набора типовых окон и дверей.\
 		Данный и последующие разделы настриваются индивидуально под Вас.\
 		==\
-		Выбор системы профиля и системы фурнитуры#\
+		Выбор систем профиля/фурнитуры#\
 		Стоимость изделия зависит от выбора системы профиля и фурнитуры. \
 		В калькуляторе есть возможность выбирать любой профиль, который используется в Вашей компании.\
 		==\
@@ -17,7 +17,8 @@
 		Перечисляются либо конкретные цвета Renolit, RAL либо сторона \
 		ламинации: внутренняя, внешняя, двусторонняя.\
 		==\
-		Вывод стоимости окна, оплаты в рассрочку, оплаты за монтаж, отделку и доставку отдельно от стоимости изделия#\
+		Вывод стоимости окна#\
+		оплаты в рассрочку, оплаты за монтаж, отделку и доставку отдельно от стоимости изделия.\
 		Для корректной работы этих функций мы закладываем Ваши формулы в модуль настроек калькулятора.\
 		==\
 		Выбор подоконника, отлива, откоса#\
@@ -26,9 +27,9 @@
 		==\
 		Выбор демонтажа, монтажа, доставки#\
 		При выборе дополнительных услуг появляется возможность задать опции, \
-		такие как расстояние в километрах для услуги 'Доставка'.\
+		такие как расстояние в километрах для услуги «Доставка».\
 		==\
-		Вывод характеристик окна: 'Тепло', 'Тишина', 'Дизайн'#\
+		Вывод характеристик окна: «Тепло», «Тишина», «Дизайн»#\
 		Благодаря этим характеристикам изделия покупатель сможет \
 		подобрать для себя более подходящую конфигурацию.\
 		==\
@@ -55,16 +56,23 @@
 
 
 style.
-	section#features .carousel .carousel-inner div.inner {
-		height: 250px;
-		background-repeat: no-repeat; 
-		background-position: center center;
-	}
 	section#features .carousel .item {
 		text-align: center;
-		height: 400px;
-		border: 1px solid silver;
+		height: 500px;
+		1border: 1px solid silver;
 		padding: 0px 10px 0px 10px;
+		background-repeat: no-repeat; 
+		background-position: center center;
+		padding: 20px 15% 0px 15%;
+	}
+	section#features .tooltip.top .tooltip-arrow {
+		border-top-color: #ef7f1a;
+	}
+	section#features .tooltip.bottom .tooltip-arrow {
+		border-bottom-color: #ef7f1a;
+	}
+	section#features .tooltip-inner {
+		background-color: #ef7f1a;
 	}
 	
 	
@@ -73,28 +81,19 @@ section#features: div.container
 
 	h2 Возможности калькулятора
 	
-	div.row
-	
-		div.col-md-2
+
 		
-		div.col-md-8
-		
-			div.carousel.slide#carousel-features(data-ride="carousel")
-				ol.carousel-indicators
-					each feature, index in features
-						li(class=index ? "" : "active" data-target="#carousel-features" data-slide-to=index)
-				div.carousel-inner(role="listbox")
-					each feature, index in features
-						div.item(class=index ? "" : "active")
-							h3= feature.title
-							p.lead= feature.text
-							div.inner(style="background-image: url('/images/features/feature" + index + ".png');")
-							
-		
-		div.col-md-2
-	
-	
-	
+	div.carousel.slide#carousel-features(data-ride="carousel" data-interval="7000")
+		ol.carousel-indicators
+			each feature, index in features
+				li(class=index ? "" : "active" data-target="#carousel-features" data-slide-to=index data-toggle="tooltip" data-placement="top" title=feature.title)
+		div.carousel-inner(role="listbox")
+			each feature, index in features
+				div.item(class=index ? "" : "active" style="background-image: url('/images/features/feature" + index + ".png');")
+					p.lead #[b= feature.title]: #{feature.text}
+
+
+	div(style="height: 100px;")
 
 	
 	

@@ -4,7 +4,8 @@
 	var list2 = "СтанПроф, Наши окна, Окнософт, Окна.NET, Окна-Двери, Euro Window, OpenWindow, UniWin Small Business, FENESTRA, Расчет окон, Winplast, \
 		WinFastReports Plast, Расчет пластиковых окон, Столкад, Ecadam, \
 		WINDOORS, Adulo GS, PowerPVC, ATHENA, UPOS, Wintechnology, FastWIN, \
-		EXCALIBUR, Windowmaker, IT Окна Конструктор, 3E-Look, Alumax3D.";
+		EXCALIBUR, Windowmaker, IT Окна Конструктор, 3E-Look, Alumax3D,\
+		И многими другими...";
 
 
 section#compatible: div.container
@@ -19,23 +20,15 @@ section#compatible: div.container
 			div(align="center")
 				
 				p.lead.
-					Калькулятор поддерживает совместную работу с основными 
-					оконными расчетными программами, такими как:
+					Калькулятор поддерживает совместную работу с любыми оконными расчетными программами, в частности:
 					
 				p.lead: each item in list1.split(",")
-					span.label.label-warning= item
+					span.label.label-info(style="font-size: 130%; line-height: 1.8; font-weight: normal;")= item
 					span 
-					
-				p.lead.
-					А также менее известными, но активно задействованными 
-					на оконных предприятиях:
 					
 				p.lead: each item in list2.split(",")
-					span.label.label-default= item
+					span.label.label-default(style="font-size: 60%; font-weight: normal;")= item
 					span 
-					
-				p.lead.
-					И многими другими программами для расчета окон.
 		
 		div.col-md-1
 	

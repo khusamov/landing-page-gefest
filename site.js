@@ -23,11 +23,11 @@ let menu = [{
 	text: "Особенности",
 	href: "#offer"
 }, {
-	text: "Схема покупки",
-	href: "#scheme"
-}, {
 	text: "Взаимодействие",
 	href: "#compatible"
+}, {
+	text: "Схема покупки",
+	href: "#scheme"
 }, {
 	text: "Контакты",
 	href: "#contacts",

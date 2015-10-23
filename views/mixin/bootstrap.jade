@@ -17,7 +17,7 @@ mixin dropdown(item)
 				li: a(href=item.href)= subitem.text
 
 mixin navbar(title, menu)
-	nav.navbar.navbar-default.navbar-fixed-top.shadow-large
+	nav#mainmenu.navbar.navbar-default.navbar-fixed-top.shadow-large
 		div.container-fluid
 			div.navbar-header: a.lobster(class="navbar-brand" href="#welcome")= title
 			div#navbar.navbar-collapse.collapse
@@ -31,9 +31,11 @@ mixin navbar(title, menu)
 				form.navbar-form.navbar-right
 					button.btn.btn-info(type="button" data-toggle="modal" data-target="#demo") Демо
 					span 
-					select#themeswitch.form-control
+					button.btn.btn-info(type="button" data-toggle="modal" data-target="#order") Купить
+					//span 
+					//select#themeswitch.form-control
 										
-				p.navbar-text.navbar-right +7 (495) 123-45-67
+				p.navbar-text.navbar-right +7 (929) 608-33-61
 				
 				//form.navbar-form.navbar-right
 				//	button.btn.btn-info(type="button") +7 (495) 123-45-67

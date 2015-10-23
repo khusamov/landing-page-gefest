@@ -107,6 +107,10 @@ h6, .h6 { font-size: 12px; }*/
 	margin-right: 0px;
 }
 
+.tooltip.top .tooltip-arrow {
+	border-top-color: #772953;
+}
+
 .tooltip.bottom .tooltip-arrow {
 	border-bottom-color: #772953;
 }
@@ -118,18 +122,32 @@ h6, .h6 { font-size: 12px; }*/
 }
 
 .carousel-indicators li {
-	border-color: black;
-	margin: 1px 5px 1px 5px;
+	border-color: #ef7f1a;
+	background-color: white;
+	box-shadow: 0 0 25px white;
 }
 
 .carousel-indicators .active {
-	height: 12px;
-	margin: 0px 5px 0px 5px;
-	background-color: black;
+	border-color: #ef7f1a;
+	background-color: #ef7f1a;
 }
 
+.carousel-indicators li,
+.carousel-indicators .active {
+	margin: 1px 5px 1px 5px;
+	width: 40px;
+	height: 15px;
+}
+
+
 .carousel-indicators {
-	bottom: -40px;
+	bottom: -10px;
+}
+
+.navbar-default a.navbar-brand:hover,
+.navbar-default a.navbar-brand:focus {
+  color: #ffffff;
+  background-color: #97310e;
 }
 
 /* Тени */

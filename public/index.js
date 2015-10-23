@@ -47,13 +47,29 @@ $(function() {
 	
 	
 	$("#kpoffer").photobox("a");
+	$("#kpoffer2").photobox("a");
 	
 	
-	$("nav.navbar button").tooltip({
+	$("nav.navbar button[data-target='#demo']").tooltip({
 		html: true,
-		title: "Посмотреть<br/> Демо-версию калькулятора",
+		title: "Посмотреть<br/> демо-версию калькулятора",
 		placement: "bottom"
 	});
+	
+	$("nav.navbar button[data-target='#order']").tooltip({
+		html: true,
+		title: "Купить<br/> калькулятор",
+		placement: "bottom"
+	});
+	
+	$('[data-toggle="tooltip"]').tooltip();
+	
+	
+	
+	
+	
+	
+	
 	
 });
 

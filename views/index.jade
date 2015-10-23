@@ -1,17 +1,23 @@
 
 include mixin/bootstrap
 
+doctype html
+
 html(lang="ru")
+
 	head: include head	
-	body(data-spy="scroll" data-target=".navbar")
+	
+	body(data-spy="scroll" data-offset=150 data-target="#mainmenu" style="position: relative;")
+	
 		include modal/demo
 		include modal/order
 		+navbar("Оконный калькулятор", menu)
+		
 		include section/welcome
 		include section/goal
 		include section/features
 		include section/offer
-		include section/scheme
 		include section/compatible
+		include section/scheme
 		include section/contacts
 		include section/setupokna
