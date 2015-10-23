@@ -1,7 +1,7 @@
 {
-  "description": "Laning Page for Gefest Calculator",
-  "author": "Khusamov Sukhrob <khusamov@yandex.ru>",
   "name": "calc-gefest-landing-page",
+  "description": "Landing Page for Gefest Calculator",
+  "author": "Khusamov Sukhrob <khusamov@yandex.ru>",
   "version": "0.0.1",
   "main": "site.js",
   "repository": {
