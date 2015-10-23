@@ -2,6 +2,12 @@
 Установка Node.js
 =================
 
+Установка Git:
+
+~~~
+apt-get install git
+~~~
+
 Установка NVM:
 
 Источник: https://github.com/creationix/nvm
