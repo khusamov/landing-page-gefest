@@ -13,19 +13,24 @@ link(rel="shortcut icon" href="/favicon.gif" type="image/x-icon")
 script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
 script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js")
 
-//- https://github.com/peachananr/simple-text-rotator
-script(src="/vendor/simple-text-rotator/jquery.simple-text-rotator.min.js")
 
-//- https://github.com/yairEO/photobox
-+css("/vendor/photobox/photobox/photobox.css")
-script(src="/vendor/photobox/photobox/jquery.photobox.js")
 
-script(src="/vendor/jquery.scrollTo/jquery.scrollTo.min.js")
+// Общий JS-файл, создаваемый в Gulp.
+// https://github.com/peachananr/simple-text-rotator
+// /vendor/simple-text-rotator/jquery.simple-text-rotator.min.js
+// /vendor/jquery.scrollTo/jquery.scrollTo.min.js
+// https://github.com/yairEO/photobox
+// /vendor/photobox/photobox/jquery.photobox.js
+script(src="/all.js")
 
-//+css("/vendor/onepage-scroll/onepage-scroll.css")
-//script(src="/vendor/onepage-scroll/jquery.onepage-scroll.min.js")
+
+// Общий CSS-файл, создаваемый в Gulp.
+// https://github.com/yairEO/photobox
+// /vendor/photobox/photobox/photobox.css
++css("all.css")
+
 
 +css("style.css")
-script(src="/themeswitch.js")
+//script(src="/themeswitch.js") // Переключение тем бутстрапа
 script(src="/index.js")
 

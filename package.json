@@ -5,7 +5,7 @@
   "version": "0.0.3",
   "main": "site.js",
   "bin": {
-  	"landinggefest": "./bin/landinggefest"
+    "landinggefest": "./bin/landinggefest"
   },
   "repository": {
     "type": "git",
@@ -28,5 +28,9 @@
   "bugs": {
     "url": "https://bitbucket.org/khusamov/calc-gefest-landing-page/issues",
     "email": "khusamov@yandex.ru"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0"
   }
 }
