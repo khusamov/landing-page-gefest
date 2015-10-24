@@ -4,6 +4,7 @@
   "author": "Khusamov Sukhrob <khusamov@yandex.ru>",
   "version": "0.0.4",
   "main": "site.js",
+  "license": "",
   "bin": {
     "landinggefest": "./bin/landinggefest"
   },
@@ -31,6 +32,7 @@
   },
   "devDependencies": {
     "gulp": "^3.9.0",
-    "gulp-concat": "^2.6.0"
+    "gulp-concat": "^2.6.0",
+    "gulp-concat-css": "^2.2.0"
   }
 }
