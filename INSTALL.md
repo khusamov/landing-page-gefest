@@ -68,5 +68,5 @@ composer require jenssegers/proxy
 Инсталяция пакета:
 
 ~~~
-npm install
+npm install landing-page-gefest
 ~~~
