@@ -8,8 +8,8 @@ let app = express();
 app.set("views", __dirname + "/views");
 app.set("view engine", "jade");
 
-app.use(express.static("public"));
-app.use("/vendor", express.static("bower_components"));
+app.use(express.static(__dirname + "/public"));
+app.use("/vendor", express.static(__dirname + "/bower_components"));
 
 
 
