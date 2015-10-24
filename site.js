@@ -104,10 +104,13 @@ app.use(function(error, request, response, next) {
 
 let commander = require("commander");
 
-commander.option("-l, --listen", "Запуск веб-сервера.").parse(process.argv);
+commander
+	.option("-l, --listen", "Запуск веб-сервера.")
+	.option("-p, --port [number]", "Номер порта.", 8080)
+	.parse(process.argv);
 
 if (commander.listen) {
-	app.listen(8080, function() {
+	app.listen(commander.port, function() {
 		console.log("Сайт запущен.");
 	});
 } else {
