@@ -4,6 +4,7 @@
 let gulp = require("gulp");
 
 let concat = require("gulp-concat");
+let concatCss = require("gulp-concat-css");
 
 gulp.task("default", ["js", "css"]);
 
@@ -27,6 +28,6 @@ gulp.task("css", function () {
 	];
 	
 	gulp.src(src)
-		.pipe(concat("all.css"))
+		.pipe(concatCss("all.css"))
 		.pipe(gulp.dest("public"));
 });
