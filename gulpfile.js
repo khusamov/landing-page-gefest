@@ -5,6 +5,13 @@ let gulp = require("gulp");
 
 let concat = require("gulp-concat");
 let concatCss = require("gulp-concat-css");
+let git = require("gulp-git");
+
+gulp.task("gefest", function() {
+	git.clone("https://khusamov@bitbucket.org/khusamov/calc.gefest.git", {
+		args: "public/gefest"
+	});
+});
 
 gulp.task("default", ["js", "css"]);
 

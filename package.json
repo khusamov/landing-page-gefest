@@ -4,13 +4,17 @@
   "author": "Khusamov Sukhrob <khusamov@yandex.ru>",
   "version": "0.0.4",
   "main": "site.js",
-  "license": "",
+  "license": "GPL",
   "bin": {
     "landinggefest": "./bin/landinggefest"
   },
   "repository": {
     "type": "git",
     "url": "https://bitbucket.org/khusamov/calc-gefest-landing-page.git"
+  },
+  "bugs": {
+    "url": "https://bitbucket.org/khusamov/calc-gefest-landing-page/issues",
+    "email": "khusamov@yandex.ru"
   },
   "engines": {
     "node": "~4.2.1"
@@ -26,13 +30,10 @@
     "nodemailer": "^1.8.0",
     "pg-promise": "~1.10.6"
   },
-  "bugs": {
-    "url": "https://bitbucket.org/khusamov/calc-gefest-landing-page/issues",
-    "email": "khusamov@yandex.ru"
-  },
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
-    "gulp-concat-css": "^2.2.0"
+    "gulp-concat-css": "^2.2.0",
+    "gulp-git": "^1.6.0"
   }
 }
