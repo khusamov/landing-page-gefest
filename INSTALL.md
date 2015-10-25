@@ -42,17 +42,6 @@ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/loca
 apt-get install curl
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 ```
-
-Установка PHP-прокси:
-=====================
-
-Источник: https://github.com/jenssegers/php-proxy
-
-```
-composer require jenssegers/proxy
-```
-
-
 Добавить файл:
 ============
 
@@ -65,7 +54,9 @@ composer require jenssegers/proxy
 }
 ```
 
+
 Инсталяция пакета:
+==================
 
 ```
 npm install landing-page-gefest -g
@@ -82,3 +73,35 @@ landinggefest
 ```
 pm2 start landinggefest
 ```
+
+Работа сайта на сервере с Апачем
+================================
+
+В этом случае необходимо сделать проксирование. 
+Есть два варианта: прокс при помощи Апача либо через PHP-прокси.
+
+Настройка прокси средствами Апача
+=================
+
+1) Включить модуль proxy Апача
+```
+a2enmod proxy proxy_html
+```
+После этого перезагрузить Апач.
+
+2) В виртуальном хосте прописать
+```
+ProxyPass / http://localhost:1501/
+ProxyPreserveHost On
+```
+
+Установка PHP-прокси:
+=====================
+
+Источник: https://github.com/jenssegers/php-proxy
+
+```
+composer require jenssegers/proxy
+```
+
+Остальное смотрите в файле proxy.php
