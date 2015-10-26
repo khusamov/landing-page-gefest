@@ -2,7 +2,7 @@
   "name": "landing-page-gefest",
   "description": "Landing Page for Gefest Calculator",
   "author": "Khusamov Sukhrob <khusamov@yandex.ru>",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "site.js",
   "license": "GPL-3.0",
   "bin": {
