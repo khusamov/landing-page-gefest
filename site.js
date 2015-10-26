@@ -67,6 +67,7 @@ app.post("/sendmail/", function(request, response) {
 		let mail = {
 			from: "khusamov@gmail.com",
 			to: "khusamov@yandex.ru",
+			cc: "89296083361@mail.ru",
 			subject: "Заказ калькулятора Гефест",
 			text: text.join("\n")
 		};
