@@ -25,6 +25,7 @@
     "express": "~4.13.3",
     "express-resource": "~1.0.0",
     "formidable": "^1.0.17",
+    "fs-extra": "^0.26.0",
     "jade": "^1.11.0",
     "jsymfony-autoload": "~0.0.1",
     "multi-ini": "~0.5.2",

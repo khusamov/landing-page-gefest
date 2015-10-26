@@ -10,6 +10,8 @@ let git = require("gulp-git");
 gulp.task("gefest", function() {
 	git.clone("https://khusamov@bitbucket.org/khusamov/calc.gefest.git", {
 		args: "public/gefest"
+	}, function(error) {
+		require("fs-extra").remove(__dirname + "/public/gefest/.git");
 	});
 });
 

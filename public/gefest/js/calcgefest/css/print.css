@@ -1,0 +1,105 @@
+
+#calc-block, .navbar {
+	display: none;
+}
+
+#calcOk1TabItemOut {
+	font-size: 12pt;
+}
+
+#calcOk1TabItemOut br {
+	display: none;
+}
+
+/* Блок с коммерческим предложением */
+
+#calcOk1TabItemOut .heightlimit {
+	border: 1px dashed black;
+	padding: 10px;
+}
+
+#calcOk1TabItemOut .img img {
+	width: 7cm;
+	padding: 0.1cm;
+}
+
+#calcOk1TabItemOut .displayhide {
+	display: block;
+}
+
+#calcOk1TabItemOut div.header {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#calcOk1TabItemOut div.button-print {
+	display: none;
+}
+
+#calcOk1TabItemOut div.paper {
+	padding: 25px;
+	background-color: white;
+	color: black;
+}
+
+#calcOk1TabItemOut div.paper div.overflow {
+	overflow: auto;
+	padding-left: 1px;
+	height: 100%;
+}
+
+#calcOk1TabItemOut div.CommercialOfferTitle {
+	font-size: 150%;
+	margin: 0px 0px 10px 0px;
+}
+
+#calcOk1TabItemOut div.CommercialOfferText {
+	margin: 0px 0px 10px 0px;
+}
+
+#calcOk1TabItemOut div.PriceProducts {
+	margin: 0px 0px 10px 0px;
+}
+
+#calcOk1TabItemOut div.PriceComponents {
+	margin: 0px 0px 10px 0px;
+}
+
+#calcOk1TabItemOut div.PriceServices {
+	margin: 0px 0px 10px 0px;
+}
+
+#calcOk1TabItemOut div.PriceTotal {
+	font-size: 120%;
+	font-weight: bold;
+	margin: 0px 0px 0px 0px;
+}
+
+#calcOk1TabItemOut table.pricelist {
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-collapse: collapse;	
+	width: 100%;
+}
+
+#calcOk1TabItemOut table.pricelist td.price,
+#calcOk1TabItemOut table.pricelist td.unit,
+#calcOk1TabItemOut table.pricelist td.count {
+	width: 11%;
+}
+
+#calcOk1TabItemOut table.pricelist td {
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+	padding: 1.5mm;
+}
+
+#calcOk1TabItemOut table.pricelist td.price {
+	text-align: right;
+	white-space: nowrap;
+}
+
+
+
+
+

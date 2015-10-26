@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title>Калькулятор расчета стоимости оконных изделий</title>
+	<meta charset="utf-8">
+   
+	<!-- jQuery & UI & Plugins -->
+		<script type="text/javascript" src="./js/jquery-ui-1.9.2.custom/js/jquery-1.8.3.js"></script>
+		<link rel="stylesheet" type="text/css" href="./js/jquery-ui-1.9.2.custom/css/start1/jquery-ui-1.9.2.custom.min.css" media="screen">
+		<script type="text/javascript" src="./js/jquery-ui-1.9.2.custom/js/jquery-ui-1.9.2.custom.min.js"></script>
+		<script type="text/javascript" src="./js/jquery.timer/jquery.timer.js"></script>
+	<!-- / jQuery -->
+	
+	<!-- Bootstrap -->
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- / Bootstrap -->
+	
+	<!-- FancyBox -->
+		<!-- Mousewheel plugin (this is optional) -->
+		<script type="text/javascript" src="./js/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+		<!-- FancyBox -->
+		<link rel="stylesheet" href="./js/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+		<script type="text/javascript" src="./js/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+		<!-- Optionally add helpers - button, thumbnail and/or media -->
+		<link rel="stylesheet" href="./js/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+		<script type="text/javascript" src="./js/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+		<script type="text/javascript" src="./js/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+		<link rel="stylesheet" href="./js/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+		<script type="text/javascript" src="./js/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+	<!-- / FancyBox -->
+	
+	
+	<script type="text/javascript" src="./js/flot/jquery.flot.js"></script>
+	
+	
+	
+	<!-- Vex Окна сообщений alert, promt, message и пр. -->
+		<script src="./js/vex-2.2.1/js/vex.combined.min.js"></script>
+		<script>vex.defaultOptions.className = 'vex-theme-default';</script>
+		<link rel="stylesheet" href="./js/vex-2.2.1/css/vex.css" />
+		<link rel="stylesheet" href="./js/vex-2.2.1/css/vex-theme-default.css" />
+	<!-- / Vex -->
+	
+	<!-- Calculator Window Price -->
+		<link rel="stylesheet" type="text/css" href="./js/calcgefest/css/main.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="./js/calcgefest/css/calc.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="./js/calcgefest/css/print.css" media="print">
+		<script type="text/javascript" src="./js/calcgefest/params.js"></script>
+		<script type="text/javascript" src="./js/calcgefest/prices.js"></script>
+		<script type="text/javascript" src="./js/calcgefest/eval.js"></script>
+		
+		<!-- Загрузка пользовательских настроек -->
+			<script>var DATAPATH = "./data/demoversion";</script>
+			<script type="text/javascript" src="./data/demoversion/params.js"></script>
+			<script type="text/javascript" src="./data/demoversion/prices.js"></script>
+			<script type="text/javascript" src="./data/demoversion/eval.js"></script>
+			<style>
+				a.navbar-brand {
+					background-image: url(./data/demoversion/logo.png);
+				}
+			</style>
+		<!-- Загрузка пользовательских настроек -->
+		
+		<script type="text/javascript" src="./js/calcgefest/calc.js"></script>
+	<!-- / Calculator Window Price -->
+	
+	<style>
+		* {
+			font-family: "Arial";
+		}
+		.navbar-bottom {
+			margin-top: 20px;
+			margin-bottom: 0px;
+		}
+	</style>
+	
+</head>
+
+<body style="padding: 0px; margin: 0px;">
+
+<!-- Загрузка курса евро из Центробанка РФ -->
+	<div style="display: none;">
+		<div id='usrutd'></div>
+		<div id='usrutm'></div>
+		<div id='eurutd'></div>
+		<div id='eurutm'></div>
+		<div id='pfdt1'></div>
+		<div id='pfdt2'></div>
+		<a href="http://www.forexpf.ru/"></a>
+		<script src='http://informers.forexpf.ru/php/cbrf.php?id=01'></script>
+	</div>
+<!-- / Загрузка курса евро из Центробанка РФ -->
+
+<!-- Шапка -->
+
+	<nav class="navbar navbar-default" role="navigation">
+	  <div class="container-fluid">
+	    
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand">Калькулятор окон</a>
+	    </div>
+	  
+	    <p class="navbar-text"><span class="items-company-page-nav-desctiption"></span></p>
+	    <p class="navbar-text navbar-right"><span class="items-company-copyright"></span></p>
+	
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li><a data-toggle="modal" href="#myModal">О компании</a></li>
+	        <!-- <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#">Action</a></li>
+	            <li><a href="#">Another action</a></li>
+	            <li><a href="#">Something else here</a></li>
+	            <li class="divider"></li>
+	            <li><a href="#">Separated link</a></li>
+	            <li class="divider"></li>
+	            <li><a href="#">One more separated link</a></li>
+	          </ul>
+	        </li> -->
+	      </ul>
+	      <!-- <ul class="nav navbar-nav navbar-right">
+	        <li><a data-toggle="modal" href="#myModal">Link</a></li>
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#">Action</a></li>
+	            <li><a href="#">Another action</a></li>
+	            <li><a href="#">Something else here</a></li>
+	            <li class="divider"></li>
+	            <li><a href="#">Separated link</a></li>
+	          </ul>
+	        </li>
+	      </ul> -->
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+	
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <h4 class="modal-title" id="myModalLabel">О компании</h4>
+	      </div>
+	      <div id="aboutcompany" class="modal-body"></div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	<div id="header-block">
+		
+	</div>
+	
+<!-- / Шапка -->
+
+<!-- Блок калькулятора -->
+	<div id="calc-block">
+	
+	<div id="dialog-select-calcmode">
+		<div style="padding: 15px;">
+			Добро пожаловать на наш сайт «Калькулятор расчета цен на окна». 
+			Вы можете рассчитать цены на окна и заказать их у нас. 
+			Выберите класс профиля:
+		</div>
+		<table class="modes"></table>
+	</div>
+	
+	<div id="calc-bg">
+	<div id="calc-bg-pic">
+	
+	
+	<table id="calc" class="calc-layout">
+		<tr>
+			<td class="calc-column-params">
+				<table class="calc-layout">
+					<tr>
+						<td style="padding-right: 30px;">
+						
+							<table class="paramblock">
+								<tr>
+									<td colspan="2">
+										<div class="item-block">
+											<div class="item-title"><span class="wintype-name-fu"></span>:</div>
+											<div class="item-select rounded" style="height:46px;padding:0;">
+									    		<div id="wtypes">
+									            	<!--<div class="wtype-block">
+									                	<img class="wtype" src="./files/a.png" alt="">
+													    <div class="wsubtype">
+													        <div id="a1"><img src="./files/a1.gif" alt=""></div>
+													        <div id="a2"><img src="./files/a2.gif" alt=""></div>
+													        <div id="a3"><img src="./files/a3.gif" alt=""></div>
+													       	<div id="a4"><img src="./files/a4.gif" alt=""></div>
+													    </div>
+									                </div>
+									                <div class="wtype-block">
+									                	<img class="wtype" src="./files/b.png" alt="">
+														<div class="wsubtype">
+															<div id="b1"><img src="./files/b1.gif" alt=""></div>
+														    <div id="b2" class="clicked"><img src="./files/b2.gif" alt=""></div>
+														    <div id="b3"><img src="./files/b3.gif" alt=""></div>
+														    <div id="b4"><img src="./files/b4.gif" alt=""></div>
+														</div>
+									                </div>
+									                <div class="wtype-block">
+									                  	<img class="wtype" src="./files/c.png" alt="">
+													    <div class="wsubtype">
+													        <div id="c1"><img src="./files/c1.gif" alt=""></div>
+													        <div id="c2"><img src="./files/c2.gif" alt=""></div>
+													        <div id="c3"><img src="./files/c3.gif" alt=""></div>
+													        <div id="c4"><img src="./files/c4.gif" alt=""></div>
+													        <div id="c5"><img src="./files/c5.gif" alt=""></div>
+													        <div id="c6"><img src="./files/c6.gif" alt=""></div>
+													        <div id="c7"><img src="./files/c7.gif" alt=""></div>
+													    </div>
+									                </div>
+									                <div class="wtype-block">
+									                   	<img class="wtype" src="./files/d.png" alt="">
+													    <div class="wsubtype">
+													        <div id="d1"><img src="./files/d1.gif" alt=""></div>
+													        <div id="d2"><img src="./files/d2.gif" alt=""></div>
+													    </div>
+									                </div>-->
+												</div>
+											</div>
+										</div>
+										<div class="clear" style="clear: both;"></div>
+									</td>
+								</tr>
+								<tr>
+									<td class="item-title">Профиль:</td>
+									<td><select id="win-sys"></select></td>
+								</tr>
+								<tr>
+									<td class="item-title">Стеклопакет:</td>
+									<td><select id="win-glass"></select></td>
+								</tr>
+								<tr class="win-furn-selectblock">
+									<td class="item-title">Фурнитура:</td>
+									<td><select id="win-furn"></select></td>
+								</tr>
+								<tr>
+									<td class="item-title"><span class="lamination-name-fu"></span>:</td>
+									<td><select id="win-lamination"></select></td>
+								</tr>
+							</table> 
+							
+							
+							
+							<div class="item-block" style="margin-top: 30px;">
+								<table style="width: 100%;">
+									<tr>
+										<td id="win-corner" style="display: none; width: 50%;">
+											<a class="fancybox" href="./images/calc/profiles/rsi2.jpg">
+												<img src="" title="Внешний вид профиля" alt="Внешний вид профиля">
+												<div style="font-size: 80%; margin-top: 10px;">Увеличить...</div>
+											</a>
+										</td>
+										<td id="win-glass-pattern" style="display: none;">
+											<img src="" title="Внешний вид стеклопакета" alt="Внешний вид стеклопакета">
+										</td>
+									</tr>
+								</table>
+							</div>
+							
+						</td>
+						<td width="480px">
+							<table id="win-sizes"><tbody>
+								<tr>
+									<td id="win-example" style="border:none;vertical-align:middle;">
+										<div id="win-type" style="text-align: center; margin-bottom: 5px; font-size: 120%;">
+											<strong>{Тип окна}</strong>
+										</div>
+										<img src="" alt="">
+									</td>
+									<td id="height-block">
+										<div id="winheight"></div>
+										<div id="vvalue">1420</div>
+									</td>
+								</tr>
+								<tr>
+									<td id="width-block" colspan="2" style="padding:5px;">
+										<div id="winwidth"></div>
+										<div id="hvalue">1460</div>
+									</td>
+								</tr>
+							</tbody></table>
+						</td>
+					</tr>
+				</table>
+				
+	
+				<table class="paramblock paramblockMisc" style="margin-top: 30px; display: none;">
+					<tr class="item-block-sill">
+						<td class="item-title">Подоконник:</td>
+						<td><select id="param-win-sill-select"></select></td>
+						<td class="item-subparams">
+							<div>
+								Длина подоконника:
+								<nbsp>
+									<input class="param-win-sill-length" type="text" value="0" size="5">
+									мм.
+								</nbsp>
+							</div>
+						 </td>
+					</tr>
+					<tr class="item-block-scarp">
+						<td class="item-title">Отлив:</td>
+						<td><select id="param-win-scarp-select"></select></td>
+						<td class="item-subparams">
+							<div>
+								Длина отлива:
+								<nbsp>
+									<input class="param-win-scarp-length" type="text" value="0" size="5">
+									мм.
+								</nbsp>
+							</div>
+						 </td>
+					</tr>
+					<tr class="item-block-outflow">
+						<td class="item-title">Откос:</td>
+						<td><select id="param-win-outflow-select"></select></td>
+						<td class="item-subparams">
+							<div>
+								Длина откоса:
+								<nbsp>
+									<input class="param-win-outflow-length" type="text" value="0" size="5">
+									мм.
+								</nbsp>
+							</div>
+						 </td>
+					</tr>
+					<tr class="item-block-deinstallation">
+						<td class="item-title">Демонтаж:</td>
+						<td><select id="param-win-deinstallation-select"></select></td>
+						<td class="item-subparams"></td>
+					</tr>
+					<tr class="item-block-installation">
+						<td class="item-title">Монтаж:</td>
+						<td><select id="param-win-installation-select"></select></td>
+						<td class="item-subparams"></td>
+					</tr>
+					<tr class="item-block-delivery">
+						<td class="item-title">Доставка:</td>
+						<td><select id="param-win-delivery-select"></select></td>
+						<td class="item-subparams">
+							<div>
+								Расстояние доставки от МКАД: 
+								<nbsp>
+									<input class="param-win-delivery-destination" type="text" value="0" size="5">
+									км.
+								</nbsp>
+							</div>
+						</td>
+					</tr>
+				</table> 
+	
+			</td>
+			 
+			<td class="calc-column-output" width="33%" id="calc-prices">
+			
+				<div class="switch-price-value" style="margin-bottom: 10px;">
+					<a class="pr" href="#">Цена заказа</a> | <a class="kp" href="#">Коммерческое предложение</a>
+				</div>
+				
+				<div id="calcOk1PriceKreditProps">
+			
+					<!-- Цена окна -->
+					<div id="output-block-price">
+						<div id="price-block">
+							<div id="price-sum-des">
+								<span id="price-sum">0</span> руб.
+							</div>
+						</div>
+						<div id="services">
+							<div class="service">
+								<span>Монтаж:</span>
+								<span id="montazh-price">0</span> руб.
+							</div>
+							<div class="service">
+								<span>Отделка*:</span>
+								<span id="otdelka-price">0</span> руб.
+							</div>
+							<div class="service">
+								<span>Доставка:</span>
+								<span id="delivery-price">0</span> руб.
+							</div>
+							<div style="font-size: 80%;">
+								__________<br/>
+								* В отделку входят: подоконники, отливы и откосы.
+							</div>
+						</div>
+					</div>
+					
+					<!-- Кредит -->
+					<div id="output-block-credit">
+						<div style="margin-bottom:1em;">
+							<div id="credit-block" class="rounded">
+								<div class="bolder">Купить в рассрочку</div>
+								<div>
+									<a href="#" id="credit-sum" title="Цена окна в рассрочку">
+										<span class="sum"></span> руб./мес.
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Коэффициенты "тепло, тишина, дизайн" -->
+					<div id="stats" class="rounded output-block-stats">
+						<div>
+							<div class="stat">
+								<div class="rounder heat left"></div>
+								<div id="heat" class="text" style="background-color: rgb(252, 97, 88); width: 135px;">&nbsp;Тепло</div>
+								<div class="rounder heat right"></div>
+							</div>
+							<div class="stat">
+								<div class="rounder silence left"></div>
+								<div id="silence" class="text" style="background-color: rgb(69, 114, 230); width: 84px;">&nbsp;Тишина</div>
+								<div class="rounder silence right"></div>
+							</div>
+							<div class="stat">
+								<div class="rounder design left"></div>
+								<div id="design" class="text" style="background-color: rgb(118, 162, 75); width: 118px;">&nbsp;Дизайн</div>
+								<div class="rounder design right"></div>
+							</div>
+						</div>
+					</div>
+				
+				</div>
+				
+				<!-- Коммерческое предложение -->
+				
+					<div id="calcOk1TabItemOut" class="body">
+						<div class="paper">
+							<div class="overflow">
+					
+								<div class="CommercialOfferText CommercialOfferText_Before"></div>
+								
+								<div class="PriceProducts" style="display: block; clear: both;">
+									<div class="header">Смета:</div>
+									<table class="pricelist">
+										<tbody>
+										
+											<tr style="font-size: 90%;">
+												<td class="image">Тип <br/> окна</td>
+												<td class="caption">Параметры <br/> окна</td>
+												<td class="count">Кол-<br/>во</td>
+												<td class="unit">Ед. <br/> изм.</td>
+												<td class="price">Цена, <br/> <span class="currency">руб.</span></td>
+											</tr>
+										
+											<tr id="kp-item-window" class="item">
+												<td><div class="img"></div></td>
+												<td>
+													<span class="caption">Окно</span>
+													"<span class="kp-win-type"></span>", 
+													размер <span class="kp-win-size-width">0</span> 
+													на <span class="kp-win-size-height">0</span> мм,
+													<span class="kp-win-system-line">система "<span class="kp-win-system"></span>",</span>
+													<span class="kp-win-package-line">стеклопакет "<span class="kp-win-package"></span>",</span>
+													<span class="kp-win-furniture-line">фурнитура "<span class="kp-win-furniture"></span>",</span>
+													<span class="lamination-name"></span> "<span class="kp-win-lamination"></span>"</span>
+												</td>
+												<td><span class="count">1</span></td>
+												<td><span class="unit">шт.</span></td>
+												<td class="price"><span class="price">0</span></td>
+											</tr>
+											
+											<tr id="kp-item-sill" class="item">
+												<td><div class="img"></div></td>
+												<td>
+													<span class="caption">Подоконник</span>
+													"<span class="kp-win-sill-vendor">Производитель</span>",
+													ширина <span class="kp-win-sill-width">100</span> мм,
+													длина <span class="kp-win-sill-length">2000</span> мм
+												</td>
+												<td><span class="count">1</span></td>
+												<td><span class="unit">шт.</span></td>
+												<td class="price"><span class="price">0</span></td>
+											</tr>
+											
+											<tr id="kp-item-scarp" class="item">
+												<td><div class="img"></div></td>
+												<td>
+													<span class="caption">Отлив</span>
+													"<span class="kp-win-scarp-vendor">Производитель</span>",
+													ширина <span class="kp-win-scarp-width">100</span> мм,
+													длина <span class="kp-win-scarp-length">2000</span> мм
+												</td>
+												<td><span class="count">1</span></td>
+												<td><span class="unit">шт.</span></td>
+												<td class="price"><span class="price">0</span></td>
+											</tr>
+											
+											<tr id="kp-item-outflow" class="item">
+												<td><div class="img"></div></td>
+												<td>
+													<span class="caption">Откос</span>
+													"<span class="kp-win-outflow-vendor">Производитель</span>",
+													ширина <span class="kp-win-outflow-width">100</span> мм,
+													длина <span class="kp-win-outflow-length">2000</span> мм
+												</td>
+												<td><span class="count">1</span></td>
+												<td><span class="unit">шт.</span></td>
+												<td class="price"><span class="price">0</span></td>
+											</tr>
+											
+											<tr id="kp-item-deinstallation" class="item">
+												<td><div class="img"></div></td>
+												<td>
+													<span class="caption">Демонтаж старого окна</span>
+												</td>
+												<td><span class="count">1</span></td>
+												<td><span class="count">окно</span></td>
+												<td class="price"><span class="price">0</span></td>
+											</tr>
+											
+											<tr id="kp-item-installation" class="item">
+												<td><div class="img"></div></td>
+												<td>
+													<span class="caption">Монтаж оконного изделия</span>
+												</td>
+												<td><span class="count">1</span></td>
+												<td><span class="unit">окно</span></td>
+												<td class="price"><span class="price">0</span></td>
+											</tr>
+											
+											<tr id="kp-item-delivery" class="item">
+												<td><div class="img"></div></td>
+												<td>
+													<span class="caption">Доставка</span>
+												</td>
+												<td><span class="count">1</span></td>
+												<td><span class="unit">шт.</span></td>
+												<td class="price">
+													<span class="price-tire" style="display: none;">—</span>
+													<span class="price">0</span>
+												</td>
+											</tr>
+											
+											<tr id="kp-item-total" class="total">
+												<td class="caption" colspan="4"><b>Итого:</b></td>
+												<td class="price">
+													<b>
+														<span class="price-tire" style="display: none;">—</span>
+														<span class="price">0</span>
+													</b>
+												</td>
+											</tr>
+											
+										</tbody>
+									</table>
+								</div>
+								
+								<div class="CommercialOfferText CommercialOfferText_After"></div>
+								
+							</div>
+						</div>
+						
+						<div class="button-print">
+							<button class="print">Печать</button>
+						</div>
+						
+					</div>
+				
+				<!-- / Коммерческое предложение -->
+				
+			</td>
+		</tr>
+	</table>
+	
+	
+	
+	
+	</div>
+	</div>
+	</div>
+<!-- / Блок калькулятора -->
+
+
+
+<!-- Подвал -->
+
+	<div id="footer-block">
+		
+	</div>
+	
+	<nav class="navbar navbar-default navbar-bottom" role="navigation">
+	  <div class="container-fluid">
+	    
+	    <p class="navbar-text">Телефон для заказа: <span class="items-company-phone"></span></p>
+	    <p class="navbar-text navbar-right"><span class="items-company-copyright"></span></p>
+	
+	    
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+<!-- / Подвал -->
+
+
+<!-- DEBUG - вывод графика интерполяции  -->
+<!-- <style>
+
+	.demo-container {
+		box-sizing: border-box;
+		width: 850px;
+		height: 450px;
+		padding: 20px 15px 15px 15px;
+		margin: 15px auto 30px auto;
+		border: 1px solid #ddd;
+		background: #fff;
+		background: linear-gradient(#f6f6f6 0, #fff 50px);
+		background: -o-linear-gradient(#f6f6f6 0, #fff 50px);
+		background: -ms-linear-gradient(#f6f6f6 0, #fff 50px);
+		background: -moz-linear-gradient(#f6f6f6 0, #fff 50px);
+		background: -webkit-linear-gradient(#f6f6f6 0, #fff 50px);
+		box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+		-o-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+		-ms-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+		-moz-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+		-webkit-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+	}
+	
+	.demo-placeholder {
+		width: 100%;
+		height: 100%;
+		font-size: 14px;
+		line-height: 1.2em;
+	}
+	
+</style>
+
+<div class="demo-container">
+	<div id="placeholder" class="demo-placeholder"></div>
+</div>  -->
+<!-- / DEBUG - вывод графика интерполяции  -->
+
+
+
+</body>
+</html>
+
+

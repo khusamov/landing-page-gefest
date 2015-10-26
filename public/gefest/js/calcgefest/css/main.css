@@ -1,0 +1,267 @@
+
+body {
+	min-width: 1270px;
+}
+
+
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
+	font-size: 14px;
+}
+
+/*
+@import url('common.css');
+@import url('header.css');
+@import url('menus.css');
+@import url('mainpage.css');
+@import url('pages.css');
+@import url('texts.css');
+@import url('lists.css');
+*/
+
+
+/* body {font:11pt Arial; left top no-repeat;}
+a {color:#367fbd;}
+a:hover {color:#690;}
+img {border:none;} */
+/* button, input, textarea
+{
+	border-radius:6px;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	box-shadow:0 0 4px 2px silver;
+	-moz-box-shadow:0 0 4px 2px silver;
+	-webkit-box-shadow:0 0 4px 2px silver;
+} */
+
+/* button
+{
+	background:#ace34d;
+	cursor:pointer;
+	padding:2px 7px;
+	width:auto;
+	border:1px solid #8c8c8c;
+	border-top:1px solid white;
+	border-left:1px solid white;
+} */
+/* input,textarea {background:#eee;border:1px solid silver;} */
+/*#pages-bg {position:absolute;z-index:-3;background:url('./images/common-bg.png') white repeat-x;}*/
+/* #socials {margin:30px 0 15px;clear:both;} */
+
+						/* Уголки контейнеров */
+/*
+.calc-cn {background:url(./images/body-corners/calc-corners.png);}
+.page-cn {background:url(./images/body-corners/page-corners.png);}
+.mp-cn {background:url(./images/body-corners/mp-corners.png);}
+.offers-cn {background:url(./images/offers/bg-corners.png);}
+*/
+
+						/* Контейнеры */
+#body-content {width:90%;position:relative;min-width:1000px;max-width:1400px;margin:2px auto;}
+#container
+{
+	position:relative;
+	z-index:100;
+	overflow:hidden;
+	top:-25px;
+	padding:2em;
+	padding-top:50px;
+	/*background:#fdfdfd url('./images/common-bg.png') top left repeat-x;*/
+}
+
+.printableArea {
+	display: none;
+}
+
+/* Макетная сетка */
+
+table.calc-layout {
+	border-collapse: collapse;	
+	width: 100%;
+}
+
+table.calc-layout td {
+	vertical-align: top;
+}
+
+table.calc-layout td.calc-column-params {
+	padding: 20px;
+}
+
+table.calc-layout td.calc-column-output {
+	background-color: #E6E6E6;
+	padding: 20px;
+}
+
+/* Таблица с параметрами */
+
+table.paramblock {
+	border-top: 0px solid black;
+	border-left: 0px solid black;
+	border-collapse: collapse;	
+	width: 100%;	
+}
+
+table.paramblock td.item-title {
+	width: 100px;
+}
+
+table.paramblock td.item-subparams {
+	font-style: italic;
+}
+
+table.paramblock tr.head {
+	background-color: #FFF2D8;
+}
+
+table.paramblock tr.head td {
+	font-weight: bold;
+}
+
+table.paramblock td {
+	border-bottom: 0px solid black;
+	border-right: 0px solid black;
+	padding: 5px 9px;
+	vertical-align: middle;
+}
+
+table.paramblock td select {
+	width: 100%;
+	padding: 3px;
+}
+
+/* Кнопки выбора режима калькулятора */
+
+#dialog-select-calcmode table.modes {
+	width: 100%;
+	height: 250px;
+}
+
+#dialog-select-calcmode table.modes td {
+	vertical-align: middle;	
+	text-align: center;
+	font-size: 300%;
+	border: 3px solid white;
+	cursor: pointer;
+	color: white;
+	background-color: #5399D0;	
+}
+
+#dialog-select-calcmode table.modes td.hover {
+	background-color: #3176AC;
+}
+
+/* Блок с коммерческим предложением */
+
+#calcOk1TabItemOut .paper {
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#calcOk1TabItemOut .heightlimit {
+	border: 1px dashed red;
+	background-color: yellow;
+	padding: 10px;
+}
+
+#calcOk1TabItemOut .img img {
+	width: 50px;
+}
+
+#calcOk1TabItemOut .displayhide {
+	display: none;
+}
+
+#calcOk1TabItemOut div.header {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#calcOk1TabItemOut div.button-print {
+	margin-top: 10px;
+}
+
+#calcOk1TabItemOut div.button-print button.print {
+	font-size: 110%;
+	padding: 5px 9px;
+}
+
+#calcOk1TabItemOut {
+	
+}
+
+#calcOk1TabItemOut div.paper {
+	border: 1px solid black;
+	padding: 25px;
+	background-color: white;
+	/*height: 600px;*/
+	font-size: 100%;
+	color: black;
+}
+
+#calcOk1TabItemOut div.paper div.overflow {
+	overflow: auto;
+	padding-left: 1px;
+	padding-right: 5px;
+	height: 100%;
+}
+
+#calcOk1TabItemOut div.CommercialOfferTitle {
+	font-size: 150%;
+	margin: 0px 0px 10px 0px;
+}
+
+#calcOk1TabItemOut div.CommercialOfferText {
+	margin: 0px 0px 10px 0px;
+}
+
+#calcOk1TabItemOut div.PriceProducts {
+	margin: 0px 0px 10px 0px;
+}
+
+#calcOk1TabItemOut div.PriceComponents {
+	margin: 0px 0px 10px 0px;
+}
+
+#calcOk1TabItemOut div.PriceServices {
+	margin: 0px 0px 10px 0px;
+}
+
+#calcOk1TabItemOut div.PriceTotal {
+	font-size: 120%;
+	font-weight: bold;
+	margin: 0px 0px 0px 0px;
+}
+
+#calcOk1TabItemOut table.pricelist {
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-collapse: collapse;	
+	width: 100%;
+}
+
+#calcOk1TabItemOut table.pricelist td {
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+	padding: 1px 3px 1px 3px;
+}
+
+#calcOk1TabItemOut table.pricelist td.price {
+	text-align: right;
+	width: 50px;
+	white-space: nowrap;
+}
+
+
+/**
+ * Логотип
+ */
+
+a.navbar-brand {
+	background-position: left center;
+	background-repeat: no-repeat;
+	padding-left: 55px;	
+	margin-left: 10px;	
+}
+
+.navbar>.container-fluid .navbar-brand {
+	margin-left: 5px;
+}
