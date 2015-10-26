@@ -4,7 +4,7 @@
   "author": "Khusamov Sukhrob <khusamov@yandex.ru>",
   "version": "0.0.5",
   "main": "site.js",
-  "license": "GPL",
+  "license": "GPL-3.0",
   "bin": {
     "landinggefest": "./bin/landinggefest"
   },
@@ -20,10 +20,11 @@
     "node": "~4.2.1"
   },
   "dependencies": {
-    "body-parser": "~1.14.0",
+    "body-parser": "^1.14.1",
     "commander": "^2.9.0",
     "express": "~4.13.3",
     "express-resource": "~1.0.0",
+    "formidable": "^1.0.17",
     "jade": "^1.11.0",
     "jsymfony-autoload": "~0.0.1",
     "multi-ini": "~0.5.2",

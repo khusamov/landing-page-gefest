@@ -2,6 +2,7 @@
 "use strict";
 
 let express = require("express");
+let formidable = require("formidable");
 
 let app = express();
 
@@ -10,8 +11,6 @@ app.set("view engine", "jade");
 
 app.use(express.static(__dirname + "/public"));
 app.use("/vendor", express.static(__dirname + "/bower_components"));
-
-
 
 let menu = [{
 	text: "Назначение",
@@ -40,56 +39,54 @@ app.get("/", function(request, response) {
 	});
 });
 
-app.get("/sendmail/", function(request, response) {
-	
-	let from = request.query.from;
+app.post("/sendmail/", function(request, response) {
 	let mailer = require("nodemailer");
-	
-	/*let transporter = mailer.createTransport({
-		host: "smtp.yandex.ru",
-		port: 465,
-		secure: true,
-		auth: {
-			user: "khusamov",
-			pass: "renepjdbbalrasck"
-		}
-	});*/
-	
-	let transporter = mailer.createTransport({
-		service: "gmail",
-		auth: {
-			user: "khusamov@gmail.com",
-			pass: "renepjdbbalrasck"
-		}
+	let form = new formidable.IncomingForm();
+	form.parse(request, function(error, fields) {
+		
+		let from = fields.email;
+		let phone = fields.phone;
+		let name = fields.name;
+		
+		let transporter = mailer.createTransport({
+			service: "gmail",
+			auth: {
+				user: "khusamov@gmail.com",
+				pass: "renepjdbbalrasck"
+			}
+		});
+		
+		let text = [];
+		
+		text.push(`Заявка на калькулятор Гефест.`);
+		text.push(`Почта: ${from}`);
+		text.push(`Телефон: ${phone}`);
+		text.push(`Имя: ${name}`);
+		text.push(`http://кальк.рф/`);
+		
+		let mail = {
+			from: "khusamov@gmail.com",
+			to: "khusamov@yandex.ru",
+			subject: "Заказ калькулятора Гефест",
+			text: text.join("\n")
+		};
+		if (from) mail.replyto = from;
+		
+		transporter.sendMail(mail, function(error, info) {
+			let result = {};
+			if (error) {
+				result.message = "Возникла ошибка при отправке письма.";
+				result.success = false;
+				result.error = error;
+			} else {
+				result.message = "Письмо успешно отправлено.";
+				result.success = true;
+				result.info = info;
+			}
+			response.send(result);
+		});
+		
 	});
-	
-	let mail = {
-		from: "khusamov@gmail.com",
-		to: "khusamov@yandex.ru",
-		subject: "Заказ калькулятора",
-		text: "Test"
-	};
-	if (from) mail.replyto = from;
-	
-	
-	console.log("Начало отправки письма:", mail);
-	transporter.sendMail(mail, function(error, info) {
-		let result = {};
-		if (error) {
-			result.message = "Возникла ошибка при отправке письма.";
-			result.success = false;
-			result.error = error;
-			console.error(result.message, mail, error);
-		} else {
-			result.message = "Письмо успешно отправлено.";
-			result.success = true;
-			result.info = info;
-			console.log(result.message, mail, info);
-		}
-		response.send(result);
-	});
-	
-
 });
 
 

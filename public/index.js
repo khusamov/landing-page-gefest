@@ -67,6 +67,29 @@ $(function() {
 	
 	
 	
+	// Обработчик кнопки купить в модальном окне Заказ калькулятора.
+	
+	var modalOrder = $("div.modal#order");
+	modalOrder.find("button.btn.btn-primary").click(function() {
+		
+		$.post("/sendmail/", {
+			email: modalOrder.find("input#email").val(),
+			phone: modalOrder.find("input#phone").val(),
+			name: modalOrder.find("input#name").val()
+		})
+			.done(function(data) {
+				if (data.success) {
+					alert("Письмо отправлено успешно!");
+				} else {
+					alert("Ошибка при отправлении письма.");
+				}
+				modalOrder.modal("hide");
+			});
+		
+		
+	});
+	
+	
 	
 	
 	
