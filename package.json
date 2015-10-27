@@ -36,6 +36,10 @@
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-concat-css": "^2.2.0",
-    "gulp-git": "^1.6.0"
+    "gulp-git": "^1.6.0",
+    "gulp-postcss": "^6.0.1",
+    "postcss-assets-rebase": "^0.4.0",
+    "postcss-copy-assets": "^0.3.0",
+    "postcss-url": "^5.0.2"
   }
 }

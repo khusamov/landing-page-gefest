@@ -8,10 +8,10 @@ link(rel="shortcut icon" href="/favicon.gif" type="image/x-icon")
 
 //- http://bootswatch.com/
 //+css("https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/flatly/bootstrap.min.css")
-+css("https://bootswatch.com/united/bootstrap.css") 
+//+css("https://bootswatch.com/united/bootstrap.css") 
 
-script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
-script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js")
+script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
+script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js")
 
 
 
@@ -21,13 +21,14 @@ script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js")
 // /vendor/jquery.scrollTo/jquery.scrollTo.min.js
 // https://github.com/yairEO/photobox
 // /vendor/photobox/photobox/jquery.photobox.js
-script(src="/all.js")
+script(src="/build/all.js")
 
 
 // Общий CSS-файл, создаваемый в Gulp.
+// https://bootswatch.com/united/bootstrap.css
 // https://github.com/yairEO/photobox
 // /vendor/photobox/photobox/photobox.css
-+css("all.css")
++css("/build/css/all.css")
 
 
 +css("style.css")
