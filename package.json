@@ -10,10 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/khusamov/calc-gefest-landing-page.git"
+    "url": "https://github.com/khusamov/landing-page-gefest.git"
   },
   "bugs": {
-    "url": "https://bitbucket.org/khusamov/calc-gefest-landing-page/issues",
+    "url": "https://github.com/khusamov/landing-page-gefest/issues",
     "email": "khusamov@yandex.ru"
   },
   "engines": {
