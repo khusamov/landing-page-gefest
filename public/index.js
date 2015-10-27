@@ -1,6 +1,5 @@
 $(function() {
 	
-	
 	// Эффект ротации текста
 	$(".rotate").textrotator({
 		animation: "dissolve",
@@ -13,7 +12,7 @@ $(function() {
 	
 	// Корректировка фрейма с демкой в модальном окне
 	$("#demo").on("show.bs.modal", function() {
-		$("#demo iframe").height(document.body.clientHeight - 180);
+		$("#demo iframe").height($(window).height() - 180);
 	});
 	
 	// Высота слайда
