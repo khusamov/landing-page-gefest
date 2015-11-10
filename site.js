@@ -28,6 +28,9 @@ let menu = [{
 	text: "Схема покупки",
 	href: "#scheme"
 }, {
+	text: "Цена",
+	href: "#price"
+}, {
 	text: "Контакты",
 	href: "#contacts",
 }];
@@ -51,8 +54,8 @@ app.post("/sendmail/", function(request, response) {
 		let transporter = mailer.createTransport({
 			service: "gmail",
 			auth: {
-				user: "khusamov@gmail.com",
-				pass: "renepjdbbalrasck"
+				user: "calcgefest@gmail.com",
+				pass: "GhjcnjVfhbz2015"
 			}
 		});
 		
