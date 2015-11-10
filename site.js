@@ -82,6 +82,7 @@ app.post("/sendmail/", function(request, response) {
 				result.message = "Возникла ошибка при отправке письма.";
 				result.success = false;
 				result.error = error;
+				console.error("Error sending mail:", error);
 			} else {
 				result.message = "Письмо успешно отправлено.";
 				result.success = true;
@@ -112,7 +113,7 @@ commander
 
 if (commander.listen) {
 	app.listen(commander.port, function() {
-		console.log("Сайт запущен.");
+		console.log("Landing page Gefest: Site started.");
 	});
 } else {
 	module.exports = app;
