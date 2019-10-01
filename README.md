@@ -1,6 +1,8 @@
 Сайт калькулятора «Гефест»
 ========================================
 
+Внимание, данный проект переехал на https://github.com/khusamov/today и сменил название на Calc Today.
+
 [![NPM version](https://badge.fury.io/js/landing-page-gefest.png)](http://badge.fury.io/js/landing-page-gefest)
 
 Рекламный сайт для оконного калькулятора «Гефест».  
